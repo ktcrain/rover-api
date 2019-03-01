@@ -1,5 +1,5 @@
 const util = require('util');
-const Message = require('./Message');
+const Message = require('./message');
 
 module.exports = class Parser {
 
