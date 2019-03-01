@@ -36,7 +36,10 @@ module.exports = class Messenger {
       
         client.on('message', (message) => {
             const parsedMsg = this.parser.parse(message);
-            this.clients.saveClient(parsedMsg.u, client);
+
+            if(parsedMsg.b === 'connected') {
+              this.clients.saveClient(client, parsedMsg);
+            }
       
             // [TODO] need to check if active driver
             if(parsedMsg.i === 'joystick') {

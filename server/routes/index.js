@@ -3,14 +3,24 @@ const path = require('path');
 const petname = require('node-petname');
 const uuid = require('uuid/v4');
 
-module.exports = function(app){
+module.exports = function(app, messenger){
     
-  app.get('/api/hello', (req, res) => {
-    res.send({
-      express: 'Hello From Express'
-    });
-  });
+  // app.get('/api/drive', (req, res) => {
+  //   res.send({
+  //     express: 'Hello From Express'
+  //   });
+  // });
   
+  app.get('/api/clients', (req, res) => {
+    const clients = messenger.clients.getClientNames();
+    res.send(clients);
+  });
+
+  app.get('/api/waiting', (req, res) => {
+    const clients = messenger.clients.getWaitList();
+    res.send(clients);
+  });
+
   app.get('/api/connect', (req, res) => {
     const msg = {
       username: petname(2, '-'),

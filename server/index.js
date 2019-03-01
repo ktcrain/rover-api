@@ -16,6 +16,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-require('./routes')(app);
+require('./routes')(app, messenger);
 
 app.listen(expressPort, () => console.log(`Rover app listening on port ${expressPort}!`));

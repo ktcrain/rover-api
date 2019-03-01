@@ -24,14 +24,13 @@
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "node-petname": "^1.0.1",
-    "nodemon": "^1.18.10",
-    "particle-api-js": "^7.3.0",
     "request": "^2.88.0",
     "uuid": "^3.3.2",
     "ws": "^6.1.4",
     "ws-heartbeat": "^1.0.4"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10"
   }
 }
