@@ -1,0 +1,10 @@
+.App-Section__Gamepad {
+    background: hsl(0, 0%, 67%);
+}
+
+.gamepad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5em 0;
+}

@@ -1,0 +1,65 @@
+html,
+body {
+    height: 100%;
+    overscroll-behavior-y: contain;
+    overflow-y: hidden;
+    background-color: #282c34;
+    touch-action: pan-x;
+}
+
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header, .App-footer, .App-Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 10px;
+}
+
+.App-header__username {
+  color: #ffaa00;
+}
+
+.App-footer {
+  background-color: #282c34;
+  /* flex-grow: 1; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* [TODO] breakout into module */
+.App-waiting {
+  text-align: left;
+}
+
+.App-waiting h2 {
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+.App-waiting ol {
+  padding-inline-start: 0;
+  list-style-position: inside;
+  text-align: left;
+  margin-block-start: 0;
+}
+
+.App-waiting__item {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%;
+}
