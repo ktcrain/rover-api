@@ -23,7 +23,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - pm2 startOrReload /home/ubuntu/applications/rover-api/ecosystem.json --update-env
+      - pm2 startOrReload $CODEBUILD_SRC_DIR/ecosystem.json --update-env
       - pm2 log rover-api --nostream --lines 25
       - pm2 show rover-api
 # Include only the files required for your application to run.
