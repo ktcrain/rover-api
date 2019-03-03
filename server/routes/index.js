@@ -25,10 +25,12 @@ module.exports = function(app, messenger){
 
     const { WS_URL, WS_PROTO, WS_PORT, WS_PATH } = process.env;
 
+    const wsUrl = WS_PROTO + '://' + WS_URL + (WS_PROTO === 'wss' ? '' : ':' + WS_PORT) + '/' + WS_PATH;
+
     const msg = {
       username: petname(2, '-'),
       uuid: uuid(),
-      wsUrl: WS_PROTO + '://' + WS_URL + ':' + WS_PORT + '/' + WS_PATH
+      wsUrl: wsUrl
     };
     res.send(msg);
   });
