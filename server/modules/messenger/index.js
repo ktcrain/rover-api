@@ -6,7 +6,9 @@ const WebSocket = require('ws');
 module.exports = class Messenger {
 
     constructor() {
-        this.wss = new WebSocket.Server({port: 40510})
+        const { WS_URL, WS_PROTO, WS_PORT, WS_PATH } = process.env;
+
+        this.wss = new WebSocket.Server({port: WS_PORT, path: '/' + WS_PATH})
         this.clients = new Clients();
         this.parser = new Parser();
 
