@@ -7,6 +7,9 @@ phases:
       - echo Installing NPM Global Dependencies...
       - npm install -g yarn
       - npm install -g pm2
+      - REPOSITORY_URI=git-codecommit.us-east-2.amazonaws.com/v1/repos/rover-api
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   pre_build:
     commands:
       - echo Installing client source NPM dependencies...
