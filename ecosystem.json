@@ -1,0 +1,25 @@
+{
+  "apps" : [{
+    "name"        : "rover-api",
+    "script"      : "server/index.js",
+    "watch"       : true,
+    "node_args"   : "--harmony",
+    "merge_logs"  : true,
+    "cwd"         : "/home/ubuntu/applications/rover-api",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": 5000,
+      "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+    },
+    "env_production" : {
+       "NODE_ENV": "production"
+    },
+    "env_staging" : {
+      "NODE_ENV" : "staging"
+    },    
+    "env_development" : {
+       "NODE_ENV" : "development",
+       "TEST"     : true
+    }
+  }]
+}

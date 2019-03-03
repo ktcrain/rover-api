@@ -1,0 +1,36 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing NPM Global Dependencies...
+      - npm install -g yarn
+      - npm install -g pm2
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - pm2 startOrReload ./ecosystem.json --update-env
+# Include only the files required for your application to run.
+# Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages 
+# used only for building and testing.
+# ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
+# [TODO] Setup Mocha and finish this list...
+artifacts:
+  files:
+    - server/index.js
+    - client/build/index.html
+    - package-lock.json
+    - node_modules/dotenv/*
+    - node_modules/express/*
+    - node_modules/lodash/*
+    - node_modules/ws/*
