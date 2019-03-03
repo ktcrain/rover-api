@@ -15,6 +15,7 @@ phases:
       - echo Installing client source NPM dependencies...
       - npm install
       - cd client && npm install
+      - cd ../
   build:
     commands:
       - echo Build started on `date`
@@ -23,7 +24,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - pm2 startOrReload $CODEBUILD_SRC_DIR/ecosystem.json --update-env
+      - CODEBUILD_SRC_DIR=$CODEBUILD_SRC_DIR pm2 startOrReload $CODEBUILD_SRC_DIR/ecosystem.json --update-env
       - pm2 log rover-api --nostream --lines 25
       - pm2 show rover-api
 # Include only the files required for your application to run.
