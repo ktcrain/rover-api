@@ -25,8 +25,7 @@ module.exports = function(app, messenger){
     const msg = {
       username: petname(2, '-'),
       uuid: uuid(),
-      wsUrl: process.env.WS_URL,
-      wsPort: process.env.WS_PORT
+      wsUrl: process.env.WS_URL
     };
     res.send(msg);
   });

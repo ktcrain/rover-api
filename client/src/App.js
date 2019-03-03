@@ -14,7 +14,6 @@ class App extends Component {
     post: '',
     responseToPost: '',
     wsUrl: null,
-    wsPort: null,
     socket: null,
   };
 
@@ -77,9 +76,9 @@ class App extends Component {
 
   connectWS() {
 
-    const {wsUrl, wsPort} = this.state;
+    const {wsUrl} = this.state;
 
-    this.socket = new WebSocket(`ws://${wsUrl}:${wsPort}`);
+    this.socket = new WebSocket(`${wsUrl}`);
 
     this.socket.onopen = (event) => {
         // sending a send event to websocket server

@@ -26,7 +26,6 @@ class Gamepad extends Component {
     const {size} = this.props;
     // const divisor = 2 * (size / 100);
     const divisor = 2; // [TODO] FIGURE OUT THIS MATH!
-    console.log(divisor);
     return Math.round((input + size/divisor)/2 / 100 * 1024);
   }
 
