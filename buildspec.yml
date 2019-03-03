@@ -9,8 +9,9 @@ phases:
       - npm install -g pm2
   pre_build:
     commands:
-      - echo Installing source NPM dependencies...
+      - echo Installing client source NPM dependencies...
       - npm install
+      - cd client && npm install
   build:
     commands:
       - echo Build started on `date`
