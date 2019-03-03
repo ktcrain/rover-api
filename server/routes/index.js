@@ -22,10 +22,13 @@ module.exports = function(app, messenger){
   });
 
   app.get('/api/connect', (req, res) => {
+
+    const { WS_URL, WS_PROTO, WS_PORT } = process.env;
+
     const msg = {
       username: petname(2, '-'),
       uuid: uuid(),
-      wsUrl: process.env.WS_URL
+      wsUrl: WS_PROTO + '://' + WS_URL + ':' + WS_PORT
     };
     res.send(msg);
   });
