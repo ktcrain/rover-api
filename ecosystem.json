@@ -8,7 +8,7 @@
     "cwd"         : "./",
     "env": {
       "NODE_ENV": "production",
-      "PORT": 5000,
+      "PORT": 8080,
       "NODE_TLS_REJECT_UNAUTHORIZED": "0"
     },
     "env_production" : {
