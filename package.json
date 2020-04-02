@@ -23,7 +23,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "node-petname": "^1.0.1",
     "request": "^2.88.0",
     "uuid": "^3.3.2",
