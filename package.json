@@ -27,7 +27,7 @@
     "node-petname": "^1.0.1",
     "request": "^2.88.0",
     "uuid": "^3.3.2",
-    "ws": "^6.1.4",
+    "ws": "^7.4.6",
     "ws-heartbeat": "^1.0.4"
   },
   "devDependencies": {
